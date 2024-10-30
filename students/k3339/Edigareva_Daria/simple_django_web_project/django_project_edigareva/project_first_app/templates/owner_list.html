@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Детали владельца</title>
-</head>
-<body>
-    <h1>Информация о владельце автомобиля</h1>
-    Имя: {{ owner.first_name }} <br>
-    Фамилия: {{ owner.last_name }} <br>
-    Дата рождения: {{ owner.birth_date }} <br>
-</body>
-</html>
+<h1>Owners</h1>
+<ul>
+    {% for owner in owners %}
+        <li>{{ owner.first_name }} {{ owner.last_name }}</li>
+    {% endfor %}
+</ul>
