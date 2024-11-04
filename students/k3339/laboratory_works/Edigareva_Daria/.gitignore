@@ -1,0 +1,14 @@
+.venv
+__pycache__
+.DS_Store
+.idea
+site
+
+# Игнорирование конфигурационных файлов VS Code
+.vscode/
+
+# Игнорирование Node.js зависимостей
+node_modules/
+
+# Игнорирование файлов окружения
+.env

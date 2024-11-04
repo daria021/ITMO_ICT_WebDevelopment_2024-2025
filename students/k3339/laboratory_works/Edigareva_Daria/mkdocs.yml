@@ -7,5 +7,6 @@ nav:
       - task 3: lab1/3.md
       - task 4: lab1/4.md
       - task 5: lab1/5.md
+  - Lab 2: lab2/index.md
 theme:
     name: simple-blog
