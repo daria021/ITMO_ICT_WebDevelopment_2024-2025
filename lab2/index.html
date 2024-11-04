@@ -1,0 +1,362 @@
+<!doctype html>
+<html>
+    <head>
+                <title>Lab 2 - My Docs</title>
+
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+            
+            
+            
+
+            
+                <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+            
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                        <script>hljs.initHighlightingOnLoad();</script>
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+            <link rel="stylesheet" href="../assets/css/main.min.css">
+                <script src="../search/main.js"></script>
+
+            
+                
+            
+    </head>
+
+    <body>
+        <div class="container py-3">
+            <header>
+                    <!-- block header -->
+<nav class="navbar navbar-expand-xl border-bottom">
+    <div class="container-fluid">
+        
+
+        
+            <span class=" fs-4 title-color site-name" id="component-site-name" style="text-transform: uppercase;">My Docs</span>
+        
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+            aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+            <ul class="navbar-nav">
+
+                <!-- block menu -->
+                <li class="nav-item">
+                    <!-- block menu -->
+    
+        <li class="nav-item" id="component-menu">
+            <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="
+                            nav-link text-gray text-decoration-none" href="..">[Home]</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="
+                            nav-link dropdown-toggle text-decoration-none" href="#" data-bs-toggle="dropdown">[Lab 1]</a>
+                            <ul class="dropdown-menu">
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../lab1/1/" class="dropdown-item text-decoration-none ">task 1</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../lab1/2/" class="dropdown-item text-decoration-none ">task 2</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../lab1/3/" class="dropdown-item text-decoration-none ">task 3</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../lab1/4/" class="dropdown-item text-decoration-none ">task 4</a>
+    </li>
+<!-- endblock -->
+                                    <!-- block dropdown-menu -->
+    <li>
+        <a href="../lab1/5/" class="dropdown-item text-decoration-none ">task 5</a>
+    </li>
+<!-- endblock -->
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class=" active 
+                            nav-link text-gray text-decoration-none" href="./">[Lab 2]</a>
+                        </li>
+            </ul>
+        </li>
+<!-- endblock -->
+                </li>
+                <!-- endblock -->
+
+                <!-- block search -->
+                <li class="nav-item">
+                    <a class="collapsed" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                        <div class="md-search-icon">
+                            <i class="fa fa-search" aria-hidden="true"></i>
+                        </div>
+                    </a>
+                </li>
+                <!--  endblock -->
+
+                <!-- block source -->
+                <li class="nav-item">
+                    
+                </li>
+                <!--  endblock -->
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--  endblock -->
+            </header>
+
+            <main><!-- block search -->
+<div class="collapse" id="collapseExample">
+    <div role="search" class="search-box">
+        <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+            <input type="text" name="q" class="search-query"
+            placeholder="Search docs" title="Type search term here" />
+        </form>
+    </div>
+</div>
+<!-- endblock -->
+                    <!-- block content -->
+<section class="container post">
+    <article>
+        <header>
+            
+                <h1 class=" title" id="component-title">Lab 2</h1>
+            
+        </header>
+        <p><h1 id="travel-tours">Документация проекта Travel Tours</h1>
+<h2 id="_1">Описание задачи</h2>
+<h3 id="_2">Список туров туристической фирмы</h3>
+<p>Приложение <strong>Travel Tours</strong> предоставляет список туров туристической фирмы с возможностью регистрации пользователей, просмотра и бронирования туров, а также добавления отзывов. Администратор может подтверждать бронирования через Django Admin.</p>
+<h3 id="_3">Функциональные требования:</h3>
+<ul>
+<li><strong>Регистрация пользователей</strong>: Регистрация новых пользователей.</li>
+<li><strong>Просмотр и бронирование туров</strong>: Пользователь может просматривать туры, резервировать, редактировать и удалять свои бронирования.</li>
+<li><strong>Добавление отзывов</strong>: При добавлении отзыва к туру сохраняются даты тура, текст комментария, рейтинг (от 1 до 10) и информация о комментаторе.</li>
+<li><strong>Подтверждение бронирований</strong>: Администратор должен иметь возможность подтвердить бронирование через Django Admin.</li>
+<li><strong>Проданные туры по странам</strong>: Клиентская часть должна содержать таблицу, отображающую проданные туры по странам.</li>
+</ul>
+<h2 id="_4">Интерфейс</h2>
+<p><img alt="img.png" src="img.png" />
+<img alt="img_1.png" src="img_1.png" />
+<img alt="img_2.png" src="img_2.png" />
+<img alt="img_3.png" src="img_3.png" />
+<img alt="img_4.png" src="img_4.png" />
+<img alt="img_5.png" src="img_5.png" /></p>
+<h2 id="_5">Модели</h2>
+<p>Основные модели проекта <code>Travel Tours</code> находятся в <code>tours/models.py</code>:</p>
+<ul>
+<li><strong>Tour</strong>: Хранит информацию о названии тура, турагентстве, описании, сроках проведения и условиях оплаты.</li>
+<li><strong>Reservation</strong>: Связывает пользователей с конкретными турами, добавляет количество участников и политику возврата.</li>
+<li><strong>Review</strong>: Позволяет пользователям оставлять отзывы о турах, включая текст, рейтинг и дату добавления отзыва.</li>
+</ul>
+<p>Пример модели <strong>Tour</strong>:</p>
+<pre><code class="language-python">class Tour(models.Model):
+    title = models.CharField(max_length=255)
+    agency = models.ForeignKey(TourAgency, on_delete=models.CASCADE, related_name='tours')
+    description = models.TextField()
+    start_date = models.DateField()
+    end_date = models.DateField()
+    payment_terms = models.TextField()
+    country = models.CharField(max_length=100)
+</code></pre>
+<hr />
+<h2 id="_6">Аутентификация пользователей</h2>
+<ol>
+<li><strong>Регистрация</strong> - Пользователи могут зарегистрироваться на странице <code>/signup/</code>, используя форму <code>UserCreationForm</code>.</li>
+<li><strong>Вход/Выход</strong> - Вход осуществляется через <code>/signin/</code>, а выход — через <code>/logout/</code>.</li>
+</ol>
+<h2 id="_7">Управление турами</h2>
+<p><strong>Список туров</strong><br />
+Главная страница <code>/</code> отображает список туров с возможностью поиска по названию тура или названию агентства.</p>
+<p><strong>Детали тура</strong><br />
+Страница с информацией о туре доступна по адресу <code>/tour/&lt;tour_id&gt;/</code>, где отображаются основная информация, отзывы и текущие бронирования.</p>
+<hr />
+<h2 id="_8">Управление бронированиями</h2>
+<ol>
+<li><strong>Бронирование тура</strong> — <code>/tour/&lt;tour_id&gt;/reserve/</code>. Пользователи могут забронировать тур, указав количество участников и политику возврата.</li>
+<li><strong>Редактирование бронирования</strong> — <code>/reservation/&lt;reservation_id&gt;/edit/</code>.</li>
+<li><strong>Удаление бронирования</strong> — POST-запрос по <code>/reservation/&lt;reservation_id&gt;/delete/</code>.</li>
+</ol>
+<p>Пример кода для бронирования тура:</p>
+<pre><code class="language-python">@login_required
+def reserve_tour(request, pk):
+    tour = get_object_or_404(Tour, pk=pk)
+    existing_reservation = Reservation.objects.filter(tour=tour, user=request.user).first()
+    if existing_reservation:
+        return redirect('edit_reservation', pk=existing_reservation.pk)
+    if request.method == 'POST':
+        form = ReservationForm(request.POST)
+        if form.is_valid():
+            reservation = form.save(commit=False)
+            reservation.user = request.user
+            reservation.tour = tour
+            reservation.save()
+            return redirect('tour_detail', pk=tour.pk)
+    else:
+        form = ReservationForm()
+    return render(request, 'reserve_tour.html', {'form': form, 'tour': tour})
+</code></pre>
+<hr />
+<h2 id="_9">Отзывы о турах</h2>
+<p>Пользователи могут добавлять отзывы на туры, включая:
+- <strong>Рейтинг</strong> (от 1 до 10)
+- <strong>Текст отзыва</strong>
+- <strong>Дата</strong> и <strong>информация о комментаторе</strong></p>
+<p>Форма добавления отзыва доступна на странице тура по адресу <code>/tour/&lt;tour_id&gt;/add_review/</code>.</p>
+<p>Пример:</p>
+<pre><code class="language-python">@login_required
+def add_review(request, pk):
+    tour = get_object_or_404(Tour, pk=pk)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.user = request.user
+            review.tour = tour
+            review.save()
+            return redirect('tour_detail', pk=tour.pk)
+    else:
+        form = ReviewForm()
+    return render(request, 'add_review.html', {'form': form, 'tour': tour})
+</code></pre>
+<hr />
+<h2 id="_10">Просмотр проданных туров</h2>
+<p>На странице <code>/sold-tours/</code> отображается таблица с проданными турами по странам, сгруппированными по количеству подтвержденных бронирований. Это позволяет пользователям видеть популярные туры.</p>
+<p>Пример кода:</p>
+<pre><code class="language-python">def sold_tours_by_country(request):
+    sold_tours = (
+        Tour.objects.filter(reservations__is_confirmed=True)
+        .values('country', 'title', 'agency__name')
+        .annotate(reservations_count=Count('reservations'))
+        .order_by('country')
+    )
+    return render(request, 'sold_tours.html', {'sold_tours': sold_tours})
+</code></pre>
+<hr />
+<h2 id="_11">Дополнительные задания</h2>
+<h3 id="_12">Меню</h3>
+<p>Меню на каждой странице включает ссылки на главную страницу, вход, регистрацию и список бронирований пользователя.</p>
+<p>Пример меню в <code>base.html</code>:</p>
+<pre><code class="language-html">&lt;nav class=&quot;navbar&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href=&quot;{% url 'tour_list' %}&quot;&gt;Туры&lt;/a&gt;&lt;/li&gt;
+        {% if user.is_authenticated %}
+            &lt;li&gt;&lt;a href=&quot;{% url 'my_reservations' %}&quot;&gt;Мои бронирования&lt;/a&gt;&lt;/li&gt;
+        {% endif %}
+        {% if user.is_authenticated %}
+            &lt;li&gt;
+                &lt;form action=&quot;{% url 'logout' %}&quot; method=&quot;post&quot;&gt;
+                    {% csrf_token %}
+                    &lt;button type=&quot;submit&quot;&gt;Выйти&lt;/button&gt;
+                &lt;/form&gt;
+            &lt;/li&gt;
+        {% else %}
+            &lt;li&gt;&lt;a href=&quot;{% url 'signin' %}&quot;&gt;Войти&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;{% url 'signup' %}&quot;&gt;Регистрация&lt;/a&gt;&lt;/li&gt;
+        {% endif %}
+    &lt;/ul&gt;
+&lt;/nav&gt;
+</code></pre>
+<h3 id="_13">Пагинация страниц</h3>
+<p>Пагинация реализована в списках туров и бронирований, чтобы облегчить навигацию.</p>
+<p>Пример шаблона пагинации:</p>
+<pre><code class="language-html">&lt;div class=&quot;pagination&quot;&gt;
+    {% if page_obj.has_previous %}
+        &lt;a href=&quot;?page=1&quot;&gt;&amp;laquo; Первая&lt;/a&gt;
+        &lt;a href=&quot;?page={{ page_obj.previous_page_number }}&quot;&gt;Назад&lt;/a&gt;
+    {% endif %}
+    &lt;span&gt;Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}&lt;/span&gt;
+    {% if page_obj.has_next %}
+        &lt;a href=&quot;?page={{ page_obj.next_page_number }}&quot;&gt;Вперед&lt;/a&gt;
+        &lt;a href=&quot;?page={{ page_obj.paginator.num_pages }}&quot;&gt;Последняя &amp;raquo;&lt;/a&gt;
+    {% endif %}
+&lt;/div&gt;
+</code></pre>
+<h3 id="_14">Поиск по объектам с пагинацией</h3>
+<p>Поиск и пагинация реализованы на страницах списка туров и бронирований пользователя.</p>
+<p>Пример:</p>
+<pre><code class="language-python">class TourListView(ListView):
+    model = Tour
+    template_name = 'tour_list.html'
+    paginate_by = 2
+
+    def get_queryset(self):
+        query = self.request.GET.get('q', '')
+        queryset = Tour.objects.all()
+        if query:
+            queryset = queryset.filter(
+                Q(title__icontains=query) | Q
+
+(agency__name__icontains=query)
+            )
+        return queryset
+</code></pre></p>
+    </article>
+</section>
+<!-- endblock -->
+            </main>
+
+            
+                    <!-- block preview -->
+        <div class="row row-cols-md-3 text-center pt-md-3" id="component-preview">
+            <div class="col themed-grid-col">
+                <a rel="prev" href="../lab1/5/" class="nav-link">
+                    <i class="fa fa-arrow-left"></i> Previous
+                </a>
+            </div>
+            <div class="col themed-grid-col"></div>
+            <div class="col themed-grid-col">
+                <a rel="next" class="nav-link disabled">
+                    Next <i class="fa fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+<!-- endblock -->
+            
+
+            
+                    <!-- block footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top" id="component-footer">
+    <div class="row">
+        <div class="col-12 col-md">
+                <!-- block copyright -->
+
+    <small class="d-block mb-3">
+        Made with
+        <a href="https://github.com/FernandoCelmer/mkdocs-simple-blog" target="_blank" rel="noopener">
+            Simple Blog for MkDocs
+        </a>
+    </small>
+
+<!-- endblock -->
+        </div>
+    </div>
+</footer>
+<!-- endblock -->
+            
+        </div>
+
+            <script>var base_url = '..';</script>
+            <script src="../assets/js/jquery-3.3.1.slim.min.js""></script>
+            <script src="../assets/js/bootstrap.bundle.min.js""></script>
+            <script src="../assets/js/main.min.js""></script>
+                <script src="../search/main.js" defer></script>
+
+    </body>
+
+</html>
