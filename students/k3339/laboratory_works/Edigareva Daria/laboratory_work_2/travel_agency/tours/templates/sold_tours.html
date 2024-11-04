@@ -1,0 +1,33 @@
+<!-- sold_tours_by_country.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Проданные туры по странам</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Страна</th>
+            <th>Название тура</th>
+            <th>Турагентство</th>
+            <th>Количество бронирований</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for tour in sold_tours %}
+            <tr>
+                <td>{{ tour.country }}</td>
+                <td>{{ tour.title }}</td>
+                <td>{{ tour.agency__name }}</td>
+                <td>{{ tour.reservations_count }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4">Нет проданных туров.</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'home' %}">На главную</a>
+{% endblock %}
