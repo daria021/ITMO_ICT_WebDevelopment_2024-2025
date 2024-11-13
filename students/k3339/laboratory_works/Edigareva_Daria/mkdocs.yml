@@ -8,5 +8,13 @@ nav:
       - task 4: lab1/4.md
       - task 5: lab1/5.md
   - Lab 2: lab2/index.md
+  - Lab 3:
+    - Практическая часть 3.1: lab3/practical_work/3.1/index.md
+    - Практическая часть 3.2 - Обзор проекта: lab3/practical_work/3.2/index.md
+    - "API эндпоинты":
+      - "Эндпоинты для работы с воинами": lab3/practical_work/3.2/warriors.md
+      - "Эндпоинты для работы с навыками": lab3/practical_work/3.2/skills.md
 theme:
-    name: simple-blog
+  name: dracula
+
+
