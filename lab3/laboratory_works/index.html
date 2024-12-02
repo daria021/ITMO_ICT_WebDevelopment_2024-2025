@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>Hotel Management API - My Docs</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../../assets/img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">My Docs</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href="../.."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#lab-1-collapse" aria-expanded="false">
+                    Lab 1
+                </a>
+                <div class="collapse" id="lab-1-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../../lab1/1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 1
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../lab1/2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 2
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../lab1/3/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 3
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../lab1/4/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 4
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../../lab1/5/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 5
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../../lab2/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Lab 2
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href="../.."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#lab-3-collapse" aria-expanded="false">
+                    Lab 3
+                </a>
+                <div class="collapse" id="lab-3-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../practical_work/3.1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Практическая часть 3.1
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../practical_work/3.2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Практическая часть 3.2 - Обзор проекта
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="hotel-management-api">Hotel Management API</h1>
+<h3 id="_1">Система управления гостиницей</h3>
+<p>Приложение <strong>Hotel Management API</strong> предназначено для администраторов гостиниц. Оно предоставляет функционал для управления номерами, клиентами, сотрудниками, бронированиями, а также расписаниями уборок. Кроме того, система позволяет выполнять регистрацию и авторизацию пользователей, а также управлять информацией о текущем пользователе.</p>
+<h3 id="_2">Функциональные требования:</h3>
+<ul>
+<li><strong>Управление номерами</strong>: Просмотр, добавление, изменение и удаление номеров.</li>
+<li><strong>Работа с клиентами</strong>: Возможность добавлять, редактировать и удалять информацию о клиентах.</li>
+<li><strong>Работа с сотрудниками</strong>: Управление расписаниями уборок и подтверждениями уборок.</li>
+<li><strong>Бронирование</strong>: Создание, изменение, удаление и просмотр записей о бронированиях.</li>
+<li><strong>Авторизация и токены</strong>: Поддержка регистрации, авторизации и работы с токенами.</li>
+</ul>
+<hr />
+<h2 id="_3">Эндпоинты</h2>
+<h3 id="rooms">Работа с номерами (Rooms)</h3>
+<ul>
+<li>
+<p><strong><code>GET /api/rooms/</code></strong><br />
+  Получить список всех доступных номеров.
+<img alt="img_6.png" src="img_6.png" /></p>
+</li>
+<li>
+<p><strong><code>POST /api/rooms/</code></strong><br />
+  Добавить новый номер.
+<img alt="img_5.png" src="img_5.png" /></p>
+</li>
+<li>
+<p><strong><code>GET /api/rooms/{id}/</code></strong><br />
+  Получить данные о конкретном номере по его ID.
+<img alt="img_7.png" src="img_7.png" /></p>
+</li>
+<li>
+<p><strong><code>PUT /api/rooms/{id}/</code></strong><br />
+  Изменить данные о конкретном номере.</p>
+</li>
+<li>Изменили телефон:
+<img alt="img_8.png" src="img_8.png" /></li>
+<li><strong><code>DELETE /api/rooms/{id}/</code></strong><br />
+  Удалить номер из базы данных.
+<img alt="img_9.png" src="img_9.png" /></li>
+</ul>
+<hr />
+<h3 id="clients">Работа с клиентами (Clients)</h3>
+<ul>
+<li>
+<p><strong><code>GET /api/clients/</code></strong><br />
+  Получить список всех клиентов.
+<img alt="img_14.png" src="img_14.png" /></p>
+</li>
+<li>
+<p><strong><code>POST /api/clients/</code></strong><br />
+  Добавить нового клиента.
+<img alt="img_10.png" src="img_10.png" /></p>
+</li>
+<li>
+<p><strong><code>GET /api/clients/{id}/</code></strong><br />
+  Получить данные о клиенте по его ID.
+<img alt="img_11.png" src="img_11.png" /></p>
+</li>
+<li>
+<p><strong><code>PUT /api/clients/{id}/</code></strong><br />
+  Изменить данные о клиенте.</p>
+</li>
+<li>
+<p>Изменим имя:
+<img alt="img_12.png" src="img_12.png" /></p>
+</li>
+<li>
+<p><strong><code>DELETE /api/clients/{id}/</code></strong><br />
+  Удалить клиента.
+<img alt="img_13.png" src="img_13.png" /></p>
+</li>
+</ul>
+<hr />
+<h3 id="bookings">Работа с бронированиями (Bookings)</h3>
+<ul>
+<li>
+<p><strong><code>GET /api/bookings/</code></strong><br />
+  Получить список всех бронирований.
+<img alt="img_21.png" src="img_21.png" /></p>
+</li>
+<li>
+<p><strong><code>POST /api/bookings/</code></strong><br />
+  Добавить новое бронирование.
+<img alt="img_20.png" src="img_20.png" /></p>
+</li>
+<li>
+<p><strong><code>GET /api/bookings/{id}/</code></strong><br />
+  Получить информацию о конкретном бронировании.
+<img alt="img_22.png" src="img_22.png" /></p>
+</li>
+<li>
+<p><strong><code>PUT /api/bookings/{id}/</code></strong><br />
+  Изменить данные о бронировании.
+<img alt="img_23.png" src="img_23.png" /></p>
+</li>
+<li>
+<p><strong><code>DELETE /api/bookings/{id}/</code></strong><br />
+  Удалить бронирование.
+<img alt="img_24.png" src="img_24.png" /></p>
+</li>
+</ul>
+<hr />
+<h3 id="staff">Работа с сотрудниками (Staff)</h3>
+<ul>
+<li>
+<p><strong><code>GET /api/staff/</code></strong><br />
+  Получить список всех сотрудников.
+<img alt="img_16.png" src="img_16.png" /></p>
+</li>
+<li>
+<p><strong><code>POST /api/staff/</code></strong><br />
+  Добавить нового сотрудника.
+<img alt="img_15.png" src="img_15.png" /></p>
+</li>
+<li>
+<p><strong><code>GET /api/staff/{id}/</code></strong><br />
+  Получить информацию о сотруднике по его ID.
+<img alt="img_17.png" src="img_17.png" /></p>
+</li>
+<li>
+<p><strong><code>PUT /api/staff/{id}/</code></strong><br />
+  Изменить данные о сотруднике.
+<img alt="img_18.png" src="img_18.png" /></p>
+</li>
+<li>
+<p><strong><code>DELETE /api/staff/{id}/</code></strong><br />
+  Удалить сотрудника.
+<img alt="img_19.png" src="img_19.png" /></p>
+</li>
+</ul>
+<hr />
+<h3 id="cleaningschedule">Работа с расписанием уборок (CleaningSchedule)</h3>
+<ul>
+<li>
+<p><strong><code>GET /api/cleaning-schedules/</code></strong><br />
+  Получить расписание всех уборок.
+<img alt="img_26.png" src="img_26.png" /></p>
+</li>
+<li>
+<p><strong><code>POST /api/cleaning-schedules/</code></strong><br />
+  Добавить новое расписание уборки.
+<img alt="img_25.png" src="img_25.png" /></p>
+</li>
+<li>
+<p><strong><code>GET /api/cleaning-schedules/{id}/</code></strong><br />
+  Получить данные о конкретном расписании.
+<img alt="img_27.png" src="img_27.png" /></p>
+</li>
+<li>
+<p><strong><code>PUT /api/cleaning-schedules/{id}/</code></strong><br />
+  Изменить расписание уборки.
+<img alt="img_28.png" src="img_28.png" /></p>
+</li>
+<li>
+<p><strong><code>DELETE /api/cleaning-schedules/{id}/</code></strong><br />
+  Удалить расписание уборки.
+<img alt="img_29.png" src="img_29.png" /></p>
+</li>
+</ul>
+<hr />
+<h3 id="cleaningconfirmation">Подтверждения уборок (CleaningConfirmation)</h3>
+<ul>
+<li>
+<p><strong><code>GET /api/cleaning-confirmations/</code></strong><br />
+  Получить список всех подтверждений уборок.
+<img alt="img_31.png" src="img_31.png" /></p>
+</li>
+<li>
+<p><strong><code>POST /api/cleaning-confirmations/</code></strong><br />
+  Добавить новое подтверждение уборки.
+<img alt="img_30.png" src="img_30.png" /></p>
+</li>
+<li>
+<p><strong><code>GET /api/cleaning-confirmations/{id}/</code></strong><br />
+  Получить информацию о конкретном подтверждении уборки.
+<img alt="img_32.png" src="img_32.png" /></p>
+</li>
+<li>
+<p><strong><code>PUT /api/cleaning-confirmations/{id}/</code></strong><br />
+  Изменить подтверждение уборки.
+<img alt="img_33.png" src="img_33.png" /></p>
+</li>
+<li>
+<p><strong><code>DELETE /api/cleaning-confirmations/{id}/</code></strong><br />
+  Удалить подтверждение уборки.
+<img alt="img_34.png" src="img_34.png" /></p>
+</li>
+</ul>
+<hr />
+<h2 id="_4">Аутентификация</h2>
+<h3 id="_5">Регистрация</h3>
+<p>Для регистрации нового пользователя используется эндпоинт:
+- <strong><code>POST /auth/users/</code></strong><br />
+  В запросе передаются <code>username</code>, <code>password</code>, <code>email</code>, <code>first_name</code>, <code>last_name</code>. После успешной регистрации возвращается JSON-ответ с данными пользователя.
+<img alt="img.png" src="img.png" /></p>
+<h3 id="_6">Авторизация (получение токена)</h3>
+<p>Для входа в систему и получения токена используется эндпоинт:
+- <strong><code>POST /auth/token/login/</code></strong><br />
+  Необходимо передать <code>username</code> и <code>password</code>. В ответе возвращается токен доступа (<code>auth_token</code>), который используется для последующих запросов.
+<img alt="img_1.png" src="img_1.png" /></p>
+<h3 id="_7">Получение информации о текущем пользователе</h3>
+<p>Для получения данных о текущем пользователе используется:
+- <strong><code>GET /auth/users/me/</code></strong><br />
+  Требуется передать токен в заголовке <code>Authorization: Token {auth_token}</code>. Возвращается информация о пользователе: <code>email</code>, <code>username</code>, <code>id</code>.
+<img alt="img_2.png" src="img_2.png" /></p>
+<h3 id="_8">Выход из системы (удаление токена)</h3>
+<p>Для выхода и уничтожения текущего токена используется:
+- <strong><code>POST /auth/token/logout/</code></strong><br />
+  Требуется передать токен в заголовке <code>Authorization</code>. После успешного запроса токен становится недействительным.
+<img alt="img_3.png" src="img_3.png" />
+<img alt="img_4.png" src="img_4.png" /></p>
+<hr /></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '../..';</script>
+        <script src="../../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../../assets/js/mkdocs.js"></script>
+			<script src="../../search/main.js" defer></script>
+
+</body>
+
+</html>
