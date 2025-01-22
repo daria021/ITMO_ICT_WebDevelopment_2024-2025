@@ -173,15 +173,15 @@ const refreshAuthLogic = (failedRequest: AxiosError) =>
    Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает `/auth/refresh` для получения новых токенов.
 
 4. **Интеграция с `axios-auth-refresh`:**
-```typescript
+```tsx
 createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
  pauseInstanceWhileRefreshing: true,
 });
 ```
-   Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из `refreshAuthLogic` для каждого запроса с истёкшим токеном.
+Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из `refreshAuthLogic` для каждого запроса с истёкшим токеном.
 
 5. **Обработка запросов:**
-```typescript
+```tsx
 apiClient.interceptors.request.use(
  (config) => {
    const token = getAccessToken();
@@ -360,26 +360,26 @@ const fetchTimeData = async (): Promise<void> => {
 #### Связь запросов с `PrefetchedData`
 
 - **Инициализация данных:** При загрузке страницы в `useEffect` происходит вызов двух функций:
-  ```tsx
-  useEffect(() => {
-    const fetchData = (): void => {
-      fetchPairs();
-      fetchTimeData();
-    };
-    fetchData(); // Запускаем первый цикл запросов
-  }, [data.selectedPair]);
-  ```
+```tsx
+useEffect(() => {
+const fetchData = (): void => {
+  fetchPairs();
+  fetchTimeData();
+};
+fetchData(); // Запускаем первый цикл запросов
+}, [data.selectedPair]);
+```
   Эти функции обновляют `pairs` и `time` внутри `PrefetchedData`, что делает их доступными для компонентов.
 
 - **Обновление данных свечей:** Когда пользователь выбирает пару, `setSelectedPair` автоматически вызывает `fetchCandlesForPair`, чтобы обновить свечи для выбранной пары:
-  ```tsx
-  const setSelectedPair = (pair: PairOption | null) => {
-    setData((prev) => ({ ...prev, selectedPair: pair }));
-    if (pair?.value) {
-      fetchCandlesForPair(pair.value);
-    }
-  };
-  ```
+```tsx
+const setSelectedPair = (pair: PairOption | null) => {
+setData((prev) => ({ ...prev, selectedPair: pair }));
+if (pair?.value) {
+  fetchCandlesForPair(pair.value);
+}
+};
+```
 
 ##### Загрузка свечей (`fetchCandlesForPair`):
 ```tsx
