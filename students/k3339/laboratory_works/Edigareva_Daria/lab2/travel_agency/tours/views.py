@@ -5,6 +5,7 @@ from .forms import CustomUserCreationForm, ReservationForm, ReviewForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from .models import Tour, Reservation
+from django.contrib.auth.decorators import user_passes_test
 
 
 class TourListView(ListView):
@@ -14,11 +15,10 @@ class TourListView(ListView):
     paginate_by = 2
 
     def get_queryset(self):
-        query = self.request.GET.get('q', '')  # Retrieve search term from the request
+        query = self.request.GET.get('q', '')
         queryset = Tour.objects.all()
 
         if query:
-            # Filter by title or agency name if search term is provided
             queryset = queryset.filter(
                 Q(title__icontains=query) | Q(agency__name__icontains=query)
             )
@@ -110,8 +110,8 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('tour_list')
 
 
+@user_passes_test(lambda user: user.is_superuser)
 def sold_tours_by_country(request):
-    # Выбираем все туры с подтвержденными бронированиями
     sold_tours = (
         Tour.objects.filter(reservations__is_confirmed=True)
         .values('country', 'title', 'agency__name')

@@ -52,7 +52,8 @@ class Staff(models.Model):
 
 
 class CleaningSchedule(models.Model):
-    staff = models.ForeignKey(Staff, on_delete=models.CASCADE, related_name="cleaning_schedules", verbose_name="Сотрудник")
+    staff = models.ForeignKey(Staff, on_delete=models.CASCADE, related_name="cleaning_schedules",
+                              verbose_name="Сотрудник")
     day_of_week = models.CharField(max_length=15, verbose_name="День недели")
 
     def __str__(self):
@@ -60,11 +61,12 @@ class CleaningSchedule(models.Model):
 
 
 class CleaningConfirmation(models.Model):
-    schedule = models.ForeignKey(CleaningSchedule, on_delete=models.CASCADE, related_name="cleanings", verbose_name="График уборки")
-    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="cleaning_confirmations", verbose_name="Комната")
+    schedule = models.ForeignKey(CleaningSchedule, on_delete=models.CASCADE, related_name="cleanings",
+                                 verbose_name="График уборки")
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="cleaning_confirmations",
+                             verbose_name="Комната")
     cleaning_date = models.DateField(verbose_name="Дата уборки")
     status = models.CharField(max_length=50, verbose_name="Статус уборки")
 
     def __str__(self):
         return f"Уборка {self.room} ({self.cleaning_date})"
-

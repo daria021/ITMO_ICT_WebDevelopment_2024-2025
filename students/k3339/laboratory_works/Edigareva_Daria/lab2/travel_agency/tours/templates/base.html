@@ -25,6 +25,11 @@
                     <li class="nav-item">
                         <a href="{% url 'tour_list' %}" class="nav-link text-white">Туры</a>
                     </li>
+                    {% if user.is_superuser %}
+                        <li class="nav-item">
+                            <a href="{% url 'sold_tours_by_country' %}" class="nav-link text-warning">Проданные туры</a>
+                        </li>
+                    {% endif %}
                     {% if user.is_authenticated %}
                         <!-- Logout form with POST method -->
                         <li class="nav-item">
@@ -43,6 +48,7 @@
                     {% endif %}
                 </ul>
             </nav>
+        
         </div>
     </div>
 </header>

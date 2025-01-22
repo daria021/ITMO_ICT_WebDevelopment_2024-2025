@@ -11,6 +11,9 @@ nav:
   - Lab 3:
     - Практическая часть 3.1: lab3/practical_work/3.1/index.md
     - Практическая часть 3.2 - Обзор проекта: lab3/practical_work/3.2/index.md
+    - Лабораторная часть: lab3/laboratory_works/index.md
+    - Лабораторная часть (коммерческий проект): lab4/index.md
+
 
 theme:
   name: dracula

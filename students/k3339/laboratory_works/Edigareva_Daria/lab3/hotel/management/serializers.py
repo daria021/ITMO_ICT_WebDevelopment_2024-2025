@@ -15,8 +15,10 @@ class ClientSerializer(serializers.ModelSerializer):
 
 
 class BookingSerializer(serializers.ModelSerializer):
-    client = serializers.PrimaryKeyRelatedField(queryset=Client.objects.all())
-    room = serializers.PrimaryKeyRelatedField(queryset=Room.objects.all())
+    client = ClientSerializer(read_only=True)
+    client_id = serializers.PrimaryKeyRelatedField(queryset=Client.objects.all(), write_only=True, source='client')
+    room = RoomSerializer(read_only=True)
+    room_id = serializers.PrimaryKeyRelatedField(queryset=Room.objects.all(), write_only=True, source='room')
 
     class Meta:
         model = Booking

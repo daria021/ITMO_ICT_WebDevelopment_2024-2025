@@ -2,7 +2,6 @@ from rest_framework import generics
 from .models import Room, Client, Booking, Staff, CleaningSchedule, CleaningConfirmation
 from .serializers import RoomSerializer, ClientSerializer, BookingSerializer, StaffSerializer, CleaningScheduleSerializer, CleaningConfirmationSerializer
 
-# Rooms
 class RoomListCreateAPIView(generics.ListCreateAPIView):
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
@@ -13,7 +12,6 @@ class RoomDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RoomSerializer
 
 
-# Clients
 class ClientListCreateAPIView(generics.ListCreateAPIView):
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
@@ -35,7 +33,6 @@ class BookingDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = BookingSerializer
 
 
-# Staff
 class StaffListCreateAPIView(generics.ListCreateAPIView):
     queryset = Staff.objects.all()
     serializer_class = StaffSerializer
@@ -57,7 +54,6 @@ class CleaningScheduleDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = CleaningScheduleSerializer
 
 
-# Cleaning Confirmations
 class CleaningConfirmationListCreateAPIView(generics.ListCreateAPIView):
     queryset = CleaningConfirmation.objects.all()
     serializer_class = CleaningConfirmationSerializer

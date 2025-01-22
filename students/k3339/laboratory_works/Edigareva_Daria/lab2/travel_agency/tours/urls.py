@@ -25,20 +25,3 @@ urlpatterns = [
     path('reservation/<int:pk>/delete/', views.delete_reservation, name='delete_reservation'),
     path('sold-tours/', views.sold_tours_by_country, name='sold_tours_by_country'),
 ]
-
-#
-# schema_view = get_schema_view(
-#     openapi.Info(
-#         title="API Documentation",
-#         default_version='v1',
-#         description="Документация для Warriors API",
-#         contact=openapi.Contact(email="your-email@example.com"),
-#     ),
-#     public=True,
-#     permission_classes=(permissions.AllowAny,),
-# )
-#
-# urlpatterns += [
-#     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-#     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-# ]
