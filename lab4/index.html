@@ -1,0 +1,448 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+        <title>Лабораторная работа №4: Разработка интерфейсов и интеграция с серверной частью - My Docs</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        
+        
+        
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="../assets/css/darcula-highlight.min.css">
+
+        <link rel="stylesheet" href="../assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../assets/css/dracula-ui.min.css">
+        <link rel="stylesheet" href="../assets/css/mkdocs.min.css">
+
+        
+            <link  rel="icon" type="image/x-icon" href="../assets/img/favicon.ico">
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+                <script>hljs.initHighlightingOnLoad();</script>
+
+</head>
+
+<body class="drac-bg-black-secondary drac-text-grey-ternary drac-text drac-scrollbar-purple">
+
+    <main class="d-flex">
+
+        <!-- block sidebar -->
+            <nav id="sidebar" class="sidebar drac-bg-black">
+    <div class="custom-menu">
+        <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            <i class="fa fa-bars"></i>
+            <span class="sr-only">Menu</span>
+        </button>
+    </div>
+
+    <div class="p-4">
+        
+
+        <div class="drac-text-center">
+            
+                <span class="drac-text drac-line-height drac-text-white">My Docs</span>
+            
+        </div>
+
+        <div class="drac-box flex-column">
+            <ul class="dot-ul">
+                <li><div class="dot-li drac-bg-cyan"></div></li>
+                <li><div class="dot-li drac-bg-green"></div></li>
+                <li><div class="dot-li drac-bg-orange"></div></li>
+                <li><div class="dot-li drac-bg-pink"></div></li>
+                <li><div class="dot-li drac-bg-purple"></div></li>
+                <li><div class="dot-li drac-bg-red"></div></li>
+                <li><div class="dot-li drac-bg-yellow"></div></li>
+            </ul>
+        </div>
+
+        <hr class="drac-divider" />
+
+        <!-- block menu -->
+        <ul class="mb-5 drac-list drac-list-none">
+            
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Home
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#lab-1-collapse" aria-expanded="false">
+                    Lab 1
+                </a>
+                <div class="collapse" id="lab-1-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab1/1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 1
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab1/2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 2
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab1/3/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 3
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab1/4/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 4
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab1/5/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            task 5
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="drac-box">
+                <a href="../lab2/"
+                    class="
+                    drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+                    Lab 2
+                </a>
+            </li>
+            <li class="drac-box">
+                <a href=".."
+                    class="
+                    drac-anchor btn-toggle d-inline-flex align-items-center border-0 drac-text-purple--hover collapsed"
+                    data-bs-toggle="collapse" data-bs-target="#lab-3-collapse" aria-expanded="false">
+                    Lab 3
+                </a>
+                <div class="collapse" id="lab-3-collapse">
+                    <ul class="mb-5 drac-list drac-list-none">
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab3/practical_work/3.1/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Практическая часть 3.1
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab3/practical_work/3.2/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Практическая часть 3.2 - Обзор проекта
+        </a>
+    </li>
+                            
+    <li class="drac-box-ternary">
+        <a href="../lab3/laboratory_works/"
+            class="
+            drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
+            Лабораторная часть
+        </a>
+    </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+        <!-- endblock -->
+    </div>
+</nav>
+        <!-- endblock -->
+
+        <nav class="divider drac-bg-purple-cyan"></nav>
+
+        <div class="content">
+            <!-- block header -->
+                <header>
+    <nav class="navbar navbar-expand-xl drac-bg-purple">
+        <div class="container-fluid">
+            
+            <button class="navbar-toggler w-100 text-center" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsMenu"
+                aria-controls="navbarsMenu" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse flex-column ml-auto" id="navbarsMenu">
+                <ul class="navbar-nav text-md-center">
+
+                    <!-- block preview -->
+                    <li class="nav-item">
+                            
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block search -->
+                    <li class="nav-item"><div role="search" class="search-box">
+	<form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+		<input type="text" name="q" class="drac-input drac-input-search drac-input-white drac-text-white drac-bg-black-secondary"
+		placeholder="Search docs" title="Type search term here" />
+	</form>
+</div>
+                    </li>
+                    <!--  endblock -->
+
+                    <!-- block source -->
+                    <li class="nav-item">
+                        
+                    </li>
+                    <!--  endblock -->
+
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+</header>
+            <!-- endblock -->
+
+            <!-- block content -->
+                <section class="p-md-5 section-content">
+    <article>
+        <p><h1 id="no4">Лабораторная работа №4: Разработка интерфейсов и интеграция с серверной частью</h1>
+<h2 id="_1">Задача проекта</h2>
+<p>Разработать клиентские интерфейсы для работы с платформой предсказательного беттинга на базе блокчейна, настроить их взаимодействие с серверной частью.</p>
+<h2 id="_2">Используемые библиотеки и их назначение</h2>
+<h3 id="_3">Для фронтенда:</h3>
+<ul>
+<li><code>@tonconnect/ui-react</code>: Управление подключением кошелька и интеграцией с блокчейном Ton.</li>
+<li><code>react</code>, <code>react-router-dom</code>: Реализация пользовательского интерфейса с навигацией.</li>
+<li><code>tailwindcss</code>: Современный CSS-фреймворк для стилизации компонентов.</li>
+<li><code>react-select</code>: Улучшенные выпадающие списки для выбора торговых пар.</li>
+<li><code>react-toastify</code>: Уведомления об ошибках, успехах и других событиях.</li>
+</ul>
+<h3 id="_4">Для бэкенда:</h3>
+<ul>
+<li><code>FastAPI</code>: Обработка серверной логики, включая аутентификацию пользователей и API.</li>
+<li><code>SQLAlchemy</code>: Работа с базой данных.</li>
+<li><code>Web3.py</code>: Взаимодействие с блокчейном, включая вызовы смарт-контрактов.</li>
+<li><code>Pydantic</code>: Определение и валидация входных данных.</li>
+</ul>
+<h2 id="_5">Описание страниц интерфейса</h2>
+<h3 id="_6">Главная страница</h3>
+<ul>
+<li><strong>Описание</strong>: Начальная страница, приветствующая пользователей и предоставляющая возможность подключения кошелька.</li>
+<li><strong>Основные функции</strong>:</li>
+<li>Приветственное сообщение и описание платформы.</li>
+<li>Кнопка TonConnect для подключения кошелька.</li>
+<li>Кнопки "Играть" и "Узнать больше" для навигации.
+<img alt="img_1.png" src="img_1.png" />
+<img alt="img_2.png" src="img_2.png" /></li>
+</ul>
+<h4 id="_7">Логика реализации:</h4>
+<ul>
+<li><strong>Подключение кошелька</strong>: Используется <code>TonConnectButton</code> для взаимодействия с TonConnect.</li>
+<li><strong>Предзагрузка данных</strong>: При помощи функций <code>getPairs()</code> и <code>fetchTime()</code> данные о парах и текущем времени блока загружаются и сохраняются в контексте через <code>setData</code>.</li>
+<li><strong>Обработка ошибок</strong>: Ошибки подключения и загрузки данных отображаются в пользовательском интерфейсе.</li>
+<li><strong>Переходы</strong>: Кнопки навигации управляют переходом на другие страницы с использованием <code>useNavigate</code>.</li>
+</ul>
+<h3 id="_8">Страница ставок</h3>
+<ul>
+<li><strong>Описание</strong>: Предоставляет интерфейс для выбора торговых пар и размещения ставок. При первом открытии пользователю показываются инструкции.</li>
+<li><strong>Основные функции</strong>:</li>
+<li>Выбор торговой пары.</li>
+<li>Ввод предсказания (вектор цены/направления движения).</li>
+<li>Подтверждение и отправка ставки.
+<img alt="img_3.png" src="img_3.png" /></li>
+<li>на изображении: желтая стрелка - агрегированная ставка всех пользователей за прошлый блок, белая стрелка - ставка юзера за прошлый блок, ее же можно двигать, переключая моды осей, чтобы пояставить новую ставку.</li>
+</ul>
+<h4 id="_9">Логика реализации:</h4>
+<ul>
+<li><strong>Трёхмерный интерфейс ставок</strong>: Пользователи видят трехмерный график, на котором агрегированные ставки всех участников за прошлый блок и своя ставка в виде стрелок на графике.</li>
+<li><strong>Обратная связь</strong>: После отправки пользователь получает уведомление о статусе ставки.</li>
+</ul>
+<h3 id="_10">Страница управления кошельком</h3>
+<ul>
+<li><strong>Описание</strong>: Позволяет пользователю управлять балансом кошелька, включая пополнение и вывод средств.</li>
+<li><strong>Основные функции</strong>:</li>
+<li>Форма пополнения депозита через TON.</li>
+<li>Форма вывода средств на кошелек юзера.</li>
+<li>История транзакций с отображением их статуса.</li>
+<li>История ставок с отображением их статуса.
+<img alt="img_5.png" src="img_5.png" /></li>
+</ul>
+<h4 id="_11">Логика реализации:</h4>
+<ul>
+<li><strong>Обработка пополнения</strong>: Запросы на сервер для обработки депозитов и их конвертации в токены платформы.</li>
+<li><strong>Вывод средств</strong>: Инициирование транзакции на указанный адрес (есть возможность сменить адрес).</li>
+</ul>
+<h3 id="_12">Страница балансов юзера</h3>
+<ul>
+<li><strong>Описание</strong>: Позволяет пользователю узнать его оставшийся депозит в игре, а также количество токенов находящихся 'at risk'. </li>
+<li><strong>Основные функции</strong>:</li>
+<li>Отображение балансов юзера.</li>
+<li>Кнопка для отключения кошелька.
+<img alt="img_4.png" src="img_4.png" /></li>
+</ul>
+<h4 id="_13">Логика реализации:</h4>
+<ul>
+<li><strong>Обработка пополнения</strong>: Запросы на сервер для плучения балансов.</li>
+</ul>
+<h2 id="_14">Реализация авторизации</h2>
+<h4 id="_15">Диаграмма процесса авторизации</h4>
+<p><img alt="img.png" src="img.png" /></p>
+<h3 id="_16">Описание работы</h3>
+<p>Авторизация на платформе организована через интеграцию с блокчейном Ton и использованием механизма <code>ton_proof</code>. Весь процесс проходит несколько ключевых этапов:</p>
+<ol>
+<li><strong>Подключение кошелька:</strong></li>
+<li>Пользователь подключает кошелёк через интерфейс TonConnect на клиенте.</li>
+<li>
+<p>Клиент отправляет запрос на сервер для генерации <code>payload</code>.</p>
+</li>
+<li>
+<p><strong>Подписание proof:</strong></p>
+</li>
+<li>Полученный <code>payload</code> подписывается приватным ключом кошелька пользователя.</li>
+<li>
+<p>Подписанный proof возвращается на фронтенд, а затем отправляется на сервер для проверки.</p>
+</li>
+<li>
+<p><strong>Проверка proof:</strong></p>
+</li>
+<li>Сервер валидирует подпись, проверяя её с публичным ключом пользователя в блокчейне.</li>
+<li>
+<p>Если proof валиден, сервер генерирует пару токенов (access и refresh) и отправляет их клиенту.</p>
+</li>
+<li>
+<p><strong>Хранение и использование токенов:</strong></p>
+</li>
+<li>Токены сохраняются в <code>localStorage</code> на клиенте и используются для авторизации запросов к API.</li>
+<li>При истечении срока действия токенов клиент автоматически обновляет их через refresh-токен.</li>
+</ol>
+<h3 id="_17">Основные компоненты</h3>
+<h4 id="1-ton_proof">1. Бэкенд: Генерация и проверка <code>ton_proof</code></h4>
+<p><strong>Генерация payload:</strong></p>
+<pre><code class="language-python">from fastapi import APIRouter
+from dependencies.services.auth import get_tonproof_service
+
+router = APIRouter(prefix='/auth', tags=['Authorization'])
+
+@router.get('/payload')
+async def generate_payload():
+    tonproof_service = get_tonproof_service()
+    payload = await tonproof_service.generate_payload()
+    return {&quot;payload&quot;: payload}
+</code></pre>
+<p><strong>Объяснение:</strong>
+- Сервис <code>get_tonproof_service</code> генерирует временный токен (payload) для пользователя.</p>
+<p><strong>Проверка подписанного proof:</strong></p>
+<pre><code class="language-python">from fastapi import APIRouter, HTTPException
+from domain.dto.auth import Credentials
+from dependencies.services.auth import get_auth_service
+
+router = APIRouter()
+
+@router.post('/verify_payload')
+async def verify_payload(credentials: Credentials):
+    auth_service = get_auth_service()
+    tokens = await auth_service.create_token(credentials)
+    return {
+        &quot;accessToken&quot;: tokens.access_token,
+        &quot;refreshToken&quot;: tokens.refresh_token
+    }
+</code></pre>
+<p><strong>Объяснение:</strong>
+- Принимает подписанный proof и проверяет его с использованием сервиса <code>get_auth_service</code>.
+- Генерирует access и refresh токены.</p>
+<h4 id="2">2. Бэкенд: Обновление токенов</h4>
+<pre><code class="language-python">@router.post('/refresh')
+async def refresh_tokens(refresh_token: str):
+    auth_service = get_auth_service()
+    tokens = await auth_service.refresh_token(refresh_token)
+    return {
+        &quot;accessToken&quot;: tokens.access_token,
+        &quot;refreshToken&quot;: tokens.refresh_token
+    }
+</code></pre>
+<p><strong>Объяснение:</strong>
+- Использует refresh токен для выдачи новых токенов.</p>
+<h4 id="3">3. Фронтенд: Контекст авторизации</h4>
+<pre><code class="language-tsx">import React, { createContext, useContext } from &quot;react&quot;;
+import { verifyPayload } from &quot;../services/api&quot;;
+
+const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) =&gt; {
+  const loginWithProof = async (proofData) =&gt; {
+    const { accessToken, refreshToken } = await verifyPayload(proofData);
+    localStorage.setItem(&quot;authToken&quot;, accessToken);
+    localStorage.setItem(&quot;refreshToken&quot;, refreshToken);
+  };
+
+  return (
+    &lt;AuthContext.Provider value={{ loginWithProof }}&gt;{children}&lt;/AuthContext.Provider&gt;
+  );
+};
+</code></pre>
+<p><strong>Объяснение:</strong>
+- Функция <code>loginWithProof</code> выполняет запрос на сервер для проверки proof и сохраняет токены в локальное хранилище.</p>
+<h4 id="4">4. Фронтенд: Интерсепторы для обновления токенов</h4>
+<pre><code class="language-tsx">apiClient.interceptors.response.use(
+  (response) =&gt; response,
+  async (error) =&gt; {
+    if (error.response?.status === 401) {
+      await refreshTokens();
+      return apiClient.request(error.config);
+    }
+    return Promise.reject(error);
+  }
+);
+</code></pre>
+<p><strong>Объяснение:</strong>
+- Если сервер возвращает 401, автоматически вызывается функция обновления токенов.</p>
+<p><strong>Пояснение:</strong>
+1. Пользователь подключает кошелёк.
+2. Клиент отправляет запрос на сервер для генерации <code>ton_proof</code>.
+3. Полученный proof подписывается в кошельке и возвращается клиенту.
+4. Клиент отправляет подписанный proof на сервер для проверки.
+5. Сервер выдаёт токены доступа и обновления.</p></p>
+    </article>
+</section>
+            <!-- endblock -->
+
+            <!-- block footer -->
+                <footer>
+    <div class="d-flex flex-sm-row justify-content-between py-2 border-top drac-text-black drac-bg-cyan-green">
+        <a href="https://github.com/dracula/mkdocs" target="_blank" style="padding-left: 1%;"
+            class="footer-text drac-anchor drac-text-black drac-text-purple--hover">
+            Made with Dracula Theme for MkDocs
+        </a>
+    </div>
+</footer>
+            <!-- endblock -->
+        </div>
+
+    </main>
+
+        <script>var base_url = '..';</script>
+        <script src="../assets/js/jquery-3.3.1.slim.min.js"></script>
+        <script src="../assets/js/bootstrap.bundle.min.js"></script>
+        <script src="../assets/js/mkdocs.js"></script>
+			<script src="../search/main.js" defer></script>
+
+</body>
+
+</html>
