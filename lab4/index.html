@@ -386,27 +386,25 @@ export const AuthProvider = ({ children }) =&gt; {
 <p><strong>Интерсепторы</strong> помогают автоматически обрабатывать запросы и ответы API. Это особенно полезно для управления обновлением токенов, когда срок действия текущего токена истекает.</p>
 <h4 id="_17">Код настройки интерсепторов</h4>
 <ol>
-<li>
-<p><strong>Создание экземпляра Axios:</strong>
-   <code>typescript
-   const apiClient = axios.create({
-     baseURL: BASE_URL,
-   });</code>
-   Здесь создаётся экземпляр <code>axios</code> с базовым URL, указывающим на API сервера. Все запросы будут направляться на этот адрес.</p>
-</li>
-<li>
-<p><strong>Получение токенов из локального хранилища:</strong>
-   ```typescript
-   function getAccessToken(): string | null {
-     return localStorage.getItem("authToken");
-   }</p>
-</li>
+<li><strong>Создание экземпляра Axios:</strong></li>
 </ol>
-<p>function getRefreshToken(): string | null {
-     return localStorage.getItem("refreshToken");
-   }
-   <code>``
-   Эти функции возвращают токены из</code>localStorage<code>, если они существуют, или</code>null`, если токен отсутствует.</p>
+<pre><code class="language-typescript">const apiClient = axios.create({
+ baseURL: BASE_URL,
+});
+</code></pre>
+<p>Здесь создаётся экземпляр <code>axios</code> с базовым URL, указывающим на API сервера. Все запросы будут направляться на этот адрес.</p>
+<ol>
+<li><strong>Получение токенов из локального хранилища:</strong></li>
+</ol>
+<pre><code class="language-typescript">function getAccessToken(): string | null {
+ return localStorage.getItem(&quot;authToken&quot;);
+}
+
+function getRefreshToken(): string | null {
+ return localStorage.getItem(&quot;refreshToken&quot;);
+}
+</code></pre>
+<p>Эти функции возвращают токены из <code>localStorage</code>, если они существуют, или <code>null</code>, если токен отсутствует.</p>
 <ol>
 <li><strong>Обновление токенов:</strong></li>
 </ol>
@@ -434,30 +432,28 @@ export const AuthProvider = ({ children }) =&gt; {
 </code></pre>
 <p>Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает <code>/auth/refresh</code> для получения новых токенов.</p>
 <ol>
-<li>
-<p><strong>Интеграция с <code>axios-auth-refresh</code>:</strong>
-   <code>typescript
-   createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
-     pauseInstanceWhileRefreshing: true,
-   });</code>
-   Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из <code>refreshAuthLogic</code> для каждого запроса с истёкшим токеном.</p>
-</li>
-<li>
-<p><strong>Обработка запросов:</strong>
-   <code>typescript
-   apiClient.interceptors.request.use(
-     (config) =&gt; {
-       const token = getAccessToken();
-       if (token) {
-         config.headers.Authorization = `Bearer ${token}`;
-       }
-       return config;
-     },
-     (error) =&gt; Promise.reject(error),
-   );</code>
-   Этот интерсептор добавляет заголовок <code>Authorization</code> ко всем запросам, если токен авторизации доступен.</p>
-</li>
+<li><strong>Интеграция с <code>axios-auth-refresh</code>:</strong></li>
 </ol>
+<pre><code class="language-typescript">createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
+ pauseInstanceWhileRefreshing: true,
+});
+</code></pre>
+<p>Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из <code>refreshAuthLogic</code> для каждого запроса с истёкшим токеном.</p>
+<ol>
+<li><strong>Обработка запросов:</strong></li>
+</ol>
+<pre><code class="language-typescript">apiClient.interceptors.request.use(
+ (config) =&gt; {
+   const token = getAccessToken();
+   if (token) {
+     config.headers.Authorization = `Bearer ${token}`;
+   }
+   return config;
+ },
+ (error) =&gt; Promise.reject(error),
+);
+</code></pre>
+<p>Этот интерсептор добавляет заголовок <code>Authorization</code> ко всем запросам, если токен авторизации доступен.</p>
 <h3 id="3">3. Логика авторизации на главной странице</h3>
 <h4 id="homepage">Код авторизации на <code>HomePage</code></h4>
 <hr />
