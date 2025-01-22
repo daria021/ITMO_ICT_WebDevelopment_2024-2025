@@ -360,6 +360,7 @@ const fetchTimeData = async (): Promise<void> => {
 #### Связь запросов с `PrefetchedData`
 
 - **Инициализация данных:** При загрузке страницы в `useEffect` происходит вызов двух функций:
+
 ```tsx
 useEffect(() => {
 const fetchData = (): void => {
@@ -369,9 +370,11 @@ const fetchData = (): void => {
 fetchData(); // Запускаем первый цикл запросов
 }, [data.selectedPair]);
 ```
+
   Эти функции обновляют `pairs` и `time` внутри `PrefetchedData`, что делает их доступными для компонентов.
 
 - **Обновление данных свечей:** Когда пользователь выбирает пару, `setSelectedPair` автоматически вызывает `fetchCandlesForPair`, чтобы обновить свечи для выбранной пары:
+
 ```tsx
 const setSelectedPair = (pair: PairOption | null) => {
 setData((prev) => ({ ...prev, selectedPair: pair }));
