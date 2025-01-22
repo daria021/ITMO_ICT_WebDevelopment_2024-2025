@@ -388,7 +388,7 @@ export const AuthProvider = ({ children }) =&gt; {
 <ol>
 <li>
 <p><strong>Создание экземпляра Axios:</strong>
-   <code>javascript
+   <code>typescript
    const apiClient = axios.create({
      baseURL: BASE_URL,
    });</code>
@@ -396,7 +396,7 @@ export const AuthProvider = ({ children }) =&gt; {
 </li>
 <li>
 <p><strong>Получение токенов из локального хранилища:</strong>
-   ```javascript
+   ```typescript
    function getAccessToken(): string | null {
      return localStorage.getItem("authToken");
    }</p>
@@ -408,35 +408,35 @@ export const AuthProvider = ({ children }) =&gt; {
    <code>``
    Эти функции возвращают токены из</code>localStorage<code>, если они существуют, или</code>null`, если токен отсутствует.</p>
 <ol>
-<li>
-<p><strong>Обновление токенов:</strong>
-   <code>javascript
-   const refreshAuthLogic = (failedRequest: AxiosError) =&gt;
-     apiClient
-       .post&lt;RefreshedTokens&gt;(
-         "/auth/refresh",
-         {},
-         {
-           headers: {
-             "X-Refresh-Token": getRefreshToken(),
-           },
-         }
-       )
-       .then((tokenRefreshResponse) =&gt; {
-         localStorage.setItem("authToken", tokenRefreshResponse.data.accessToken);
-         localStorage.setItem(
-           "refreshToken",
-           tokenRefreshResponse.data.refreshToken,
-         );
-         failedRequest.response!.config.headers["Authorization"] =
-           "Bearer " + tokenRefreshResponse.data.accessToken;
-         return Promise.resolve();
-       });</code>
-   Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает <code>/auth/refresh</code> для получения новых токенов.</p>
-</li>
+<li><strong>Обновление токенов:</strong></li>
+</ol>
+<pre><code class="language-typescript">const refreshAuthLogic = (failedRequest: AxiosError) =&gt;
+ apiClient
+   .post&lt;RefreshedTokens&gt;(
+     &quot;/auth/refresh&quot;,
+     {},
+     {
+       headers: {
+         &quot;X-Refresh-Token&quot;: getRefreshToken(),
+       },
+     }
+   )
+   .then((tokenRefreshResponse) =&gt; {
+     localStorage.setItem(&quot;authToken&quot;, tokenRefreshResponse.data.accessToken);
+     localStorage.setItem(
+       &quot;refreshToken&quot;,
+       tokenRefreshResponse.data.refreshToken,
+     );
+     failedRequest.response!.config.headers[&quot;Authorization&quot;] =
+       &quot;Bearer &quot; + tokenRefreshResponse.data.accessToken;
+     return Promise.resolve();
+   });
+</code></pre>
+<p>Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает <code>/auth/refresh</code> для получения новых токенов.</p>
+<ol>
 <li>
 <p><strong>Интеграция с <code>axios-auth-refresh</code>:</strong>
-   <code>javascript
+   <code>typescript
    createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
      pauseInstanceWhileRefreshing: true,
    });</code>
@@ -444,7 +444,7 @@ export const AuthProvider = ({ children }) =&gt; {
 </li>
 <li>
 <p><strong>Обработка запросов:</strong>
-   <code>javascript
+   <code>typescript
    apiClient.interceptors.request.use(
      (config) =&gt; {
        const token = getAccessToken();
