@@ -127,7 +127,7 @@ export const AuthProvider = ({ children }) => {
 #### Код настройки интерсепторов
 
 1. **Создание экземпляра Axios:**
-   ```javascript
+   ```typescript
    const apiClient = axios.create({
      baseURL: BASE_URL,
    });
@@ -135,7 +135,7 @@ export const AuthProvider = ({ children }) => {
    Здесь создаётся экземпляр `axios` с базовым URL, указывающим на API сервера. Все запросы будут направляться на этот адрес.
 
 2. **Получение токенов из локального хранилища:**
-   ```javascript
+   ```typescript
    function getAccessToken(): string | null {
      return localStorage.getItem("authToken");
    }
@@ -147,33 +147,33 @@ export const AuthProvider = ({ children }) => {
    Эти функции возвращают токены из `localStorage`, если они существуют, или `null`, если токен отсутствует.
 
 3. **Обновление токенов:**
-   ```javascript
-   const refreshAuthLogic = (failedRequest: AxiosError) =>
-     apiClient
-       .post<RefreshedTokens>(
-         "/auth/refresh",
-         {},
-         {
-           headers: {
-             "X-Refresh-Token": getRefreshToken(),
-           },
-         }
-       )
-       .then((tokenRefreshResponse) => {
-         localStorage.setItem("authToken", tokenRefreshResponse.data.accessToken);
-         localStorage.setItem(
-           "refreshToken",
-           tokenRefreshResponse.data.refreshToken,
-         );
-         failedRequest.response!.config.headers["Authorization"] =
-           "Bearer " + tokenRefreshResponse.data.accessToken;
-         return Promise.resolve();
-       });
-   ```
+```typescript
+const refreshAuthLogic = (failedRequest: AxiosError) =>
+ apiClient
+   .post<RefreshedTokens>(
+     "/auth/refresh",
+     {},
+     {
+       headers: {
+         "X-Refresh-Token": getRefreshToken(),
+       },
+     }
+   )
+   .then((tokenRefreshResponse) => {
+     localStorage.setItem("authToken", tokenRefreshResponse.data.accessToken);
+     localStorage.setItem(
+       "refreshToken",
+       tokenRefreshResponse.data.refreshToken,
+     );
+     failedRequest.response!.config.headers["Authorization"] =
+       "Bearer " + tokenRefreshResponse.data.accessToken;
+     return Promise.resolve();
+   });
+```
    Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает `/auth/refresh` для получения новых токенов.
 
 4. **Интеграция с `axios-auth-refresh`:**
-   ```javascript
+   ```typescript
    createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
      pauseInstanceWhileRefreshing: true,
    });
@@ -181,7 +181,7 @@ export const AuthProvider = ({ children }) => {
    Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из `refreshAuthLogic` для каждого запроса с истёкшим токеном.
 
 5. **Обработка запросов:**
-   ```javascript
+   ```typescript
    apiClient.interceptors.request.use(
      (config) => {
        const token = getAccessToken();
