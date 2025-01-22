@@ -370,27 +370,7 @@ export const AuthProvider = ({ children }) =&gt; {
 </code></pre>
 <p><strong>Объяснение:</strong>
 - Функция <code>loginWithProof</code> выполняет запрос на сервер для проверки <code>proof</code> и сохраняет токены в локальное хранилище.</p>
-<h4 id="4">4. Фронтенд: Интерсепторы для обновления токенов</h4>
-<pre><code class="language-tsx">apiClient.interceptors.response.use(
-  (response) =&gt; response,
-  async (error) =&gt; {
-    if (error.response?.status === 401) {
-      await refreshTokens();
-      return apiClient.request(error.config);
-    }
-    return Promise.reject(error);
-  }
-);
-</code></pre>
-<p><strong>Объяснение:</strong>
-- Если сервер возвращает 401, автоматически вызывается функция обновления токенов.</p>
-<p><strong>Пояснение:</strong>
-1. Пользователь подключает кошелёк.
-2. Клиент отправляет запрос на сервер для генерации <code>ton_proof</code>.
-3. Полученный proof подписывается в кошельке и возвращается клиенту.
-4. Клиент отправляет подписанный proof на сервер для проверки.
-5. Сервер выдаёт токены доступа и обновления.</p>
-<h3 id="4_1">4. Фронтенд: Интерсепторы для обновления токенов</h3>
+<h3 id="2">2. Фронтенд: Интерсепторы для обновления токенов</h3>
 <p><strong>Интерсепторы</strong> помогают автоматически обрабатывать запросы и ответы API. Это особенно полезно для управления обновлением токенов, когда срок действия текущего токена истекает.</p>
 <h4 id="_17">Код настройки интерсепторов</h4>
 <ol>
@@ -466,9 +446,8 @@ export const AuthProvider = ({ children }) =&gt; {
    Этот интерсептор добавляет заголовок <code>Authorization</code> ко всем запросам, если токен авторизации доступен.</p>
 </li>
 </ol>
-<h3 id="5">5. Логика авторизации на главной странице</h3>
+<h3 id="3">3. Логика авторизации на главной странице</h3>
 <h4 id="homepage">Код авторизации на <code>HomePage</code></h4>
-<h3 id="_18">Расширенное описание работы и логики фронтенда</h3>
 <hr />
 <h4 id="tonconnect">Взаимодействия с TonConnect на главной странице</h4>
 <pre><code class="language-tsx">useEffect(() =&gt; {
@@ -520,7 +499,7 @@ export const AuthProvider = ({ children }) =&gt; {
 <li>Независимо от результата, состояние загрузки (<code>loading</code>) завершается.</li>
 </ol>
 <hr />
-<h4 id="_19">Запросы к бэкенду</h4>
+<h4 id="4">4.Запросы к бэкенду</h4>
 <p>Клиентское приложение взаимодействует с сервером через API, используя предварительно настроенный клиент Axios. Вот пример одного из запросов:</p>
 <pre><code class="language-typescript">export async function getUserBets(): Promise&lt;UserBetsResponse&gt; {
     try {
@@ -547,46 +526,128 @@ export const AuthProvider = ({ children }) =&gt; {
 <li>Используется строгая типизация ответа с помощью <code>Promise&lt;UserBetsResponse&gt;</code>, что позволяет интегрироваться с остальными компонентами приложения.</li>
 </ol>
 <hr />
-<h3 id="prefetcheddata">Работа <code>PrefetchedData</code> и его контекста</h3>
-<p><strong><code>PrefetchedData</code></strong> предназначен для предварительной загрузки и управления ключевыми данными, такими как торговые пары, свечные графики и текущее время блока.</p>
-<h4 id="_20">Как он работает:</h4>
+<h3 id="5-prefetcheddata">5.Описание <code>PrefetchedData</code> и связанных запросов</h3>
+<hr />
+<p><code>PrefetchedData</code> представляет собой контекст для управления ключевыми данными приложения, такими как список торговых пар, данные свечей, текущее время блока и выбранная пара. Этот подход улучшает производительность приложения за счет предварительной загрузки данных и их централизованного управления.</p>
+<h4 id="prefetcheddata">Как работает <code>PrefetchedData</code></h4>
 <ol>
+<li><strong>Инициализация контекста:</strong>
+   Контекст создается для хранения данных, методов управления и состояния загрузки. Он включает:</li>
+<li><code>pairs</code> — список доступных торговых пар.</li>
+<li><code>candles</code> — данные свечей для выбранной пары.</li>
+<li><code>time</code> — оставшееся время текущего блока.</li>
+<li><code>selectedPair</code> — выбранная пользователем пара.</li>
 <li>
-<p><strong>Создание контекста:</strong>
-   <code>typescript
-   const DataPrefetchContext = createContext&lt;DataPrefetchContextValue | undefined&gt;(undefined);</code></p>
+<p>Методы для загрузки данных (<code>fetchCandlesForPair</code>) и выбора пары (<code>setSelectedPair</code>).</p>
 </li>
 <li>
-<p><strong>Состояние данных:</strong></p>
+<p><strong>Параллельные запросы в <code>useEffect</code>:</strong>
+   Внутри <code>useEffect</code> запускаются два параллельных запроса:</p>
+</li>
+<li>Для получения списка пар (<code>fetchPairs</code>).</li>
+<li>
+<p>Для получения времени блока (<code>fetchTimeData</code>).</p>
 </li>
 <li>
-<p>Состояние данных включает:</p>
-<ul>
-<li>Список пар (<code>pairs</code>).</li>
-<li>Данные свечей (<code>candles</code>).</li>
-<li>Выбранную пару (<code>selectedPair</code>).</li>
-<li>Текущее время блока (<code>time</code>).</li>
-</ul>
+<p><strong>Реализация запросов:</strong></p>
 </li>
-<li>
-<p><strong>Методы управления:</strong></p>
-</li>
-<li><code>fetchCandlesForPair</code>: Загружает данные свечей для выбранной пары.</li>
-<li>
-<p><code>setSelectedPair</code>: Обновляет текущую выбранную пару и загружает соответствующие свечи.</p>
-</li>
-<li>
-<p><strong>Использование в компонентах:</strong></p>
-</li>
-<li>Компоненты получают доступ к этим данным через <code>useDataPrefetch</code>.</li>
 </ol>
-<h4 id="_21">Пример использования:</h4>
+<h5 id="fetchpairs">Загрузка пар (<code>fetchPairs</code>):</h5>
+<pre><code class="language-tsx">const fetchPairs = async (): Promise&lt;void&gt; =&gt; {
+  try {
+    const pairsResponse = await getPairs();
+
+    if (!pairsResponse || !Array.isArray(pairsResponse)) {
+      console.warn(&quot;Данные пар невалидны, повторный запрос через 5 секунд...&quot;);
+      setTimeout(fetchPairs, 5000);
+      return;
+    }
+
+    const pairs = pairsResponse.map((pair) =&gt; ({
+      value: pair.pair_id,
+      label: pair.name,
+    }));
+    console.log(&quot;pairs&quot;, pairs);
+    setData((prev) =&gt; ({ ...prev, pairs })); // Обновляем только пары
+  } catch (error) {
+    console.error(&quot;Ошибка при загрузке пар:&quot;, error);
+    setTimeout(fetchPairs, 5000); // Повторяем запрос через 5 секунд
+  }
+};
+</code></pre>
+<p><strong>Логика:</strong>
+- Получает данные через API-запрос к <code>/pair</code>.
+- Проверяет валидность ответа и преобразует его в формат, подходящий для использования в <code>react-select</code>.
+- При ошибке повторяет запрос через 5 секунд.</p>
+<h5 id="fetchtimedata">Загрузка времени блока (<code>fetchTimeData</code>):</h5>
+<pre><code class="language-tsx">const fetchTimeData = async (): Promise&lt;void&gt; =&gt; {
+  try {
+    const timeResponse = await fetchTime();
+
+    if (!timeResponse || timeResponse.remaining_time_in_block === 0) {
+      console.warn(&quot;Данные времени невалидны, повторный запрос через 5 секунд...&quot;);
+      setTimeout(fetchTimeData, 5000);
+      return;
+    }
+    console.log(&quot;time&quot;, timeResponse);
+    setData((prev) =&gt; ({ ...prev, time: timeResponse.remaining_time_in_block })); // Обновляем только время
+  } catch (error) {
+    console.error(&quot;Ошибка при загрузке времени:&quot;, error);
+    setTimeout(fetchTimeData, 5000); // Повторяем запрос через 5 секунд
+  }
+};
+</code></pre>
+<p><strong>Логика:</strong>
+- Получает время блока через API-запрос к <code>/chain/time</code>.
+- Проверяет корректность данных времени и обновляет состояние.
+- При ошибке также запускает повторный запрос.</p>
+<hr />
+<h4 id="prefetcheddata_1">Связь запросов с <code>PrefetchedData</code></h4>
 <ul>
-<li>При выборе пары через <code>react-select</code> метод <code>setSelectedPair</code> обновляет состояние <code>selectedPair</code> и автоматически подгружает свечные данные для выбранной пары.</li>
+<li>
+<p><strong>Инициализация данных:</strong> При загрузке страницы в <code>useEffect</code> происходит вызов двух функций:
+  <code>tsx
+  useEffect(() =&gt; {
+    const fetchData = (): void =&gt; {
+      fetchPairs();
+      fetchTimeData();
+    };
+    fetchData(); // Запускаем первый цикл запросов
+  }, [data.selectedPair]);</code>
+  Эти функции обновляют <code>pairs</code> и <code>time</code> внутри <code>PrefetchedData</code>, что делает их доступными для компонентов.</p>
+</li>
+<li>
+<p><strong>Обновление данных свечей:</strong> Когда пользователь выбирает пару, <code>setSelectedPair</code> автоматически вызывает <code>fetchCandlesForPair</code>, чтобы обновить свечи для выбранной пары:
+  <code>tsx
+  const setSelectedPair = (pair: PairOption | null) =&gt; {
+    setData((prev) =&gt; ({ ...prev, selectedPair: pair }));
+    if (pair?.value) {
+      fetchCandlesForPair(pair.value);
+    }
+  };</code></p>
+</li>
 </ul>
-<p><strong>Польза:</strong>
-- Уменьшает время загрузки данных в реальном времени.
-- Повышает отзывчивость интерфейса, так как предварительно загруженные данные доступны локально.</p></p>
+<h5 id="fetchcandlesforpair">Загрузка свечей (<code>fetchCandlesForPair</code>):</h5>
+<pre><code class="language-tsx">const fetchCandlesForPair = async (pairId: string) =&gt; {
+  setData((prev) =&gt; ({ ...prev, isLoading: true, error: null }));
+  try {
+    const candles = await fetchCandles(pairId);
+    setData((prev) =&gt; ({ ...prev, candles, isLoading: false }));
+    console.log(&quot;data.candles&quot;, candles);
+  } catch (err) {
+    console.error(`Ошибка при загрузке данных для пары ${pairId}:`, err);
+    setData((prev) =&gt; ({
+      ...prev,
+      error: (err as Error).message || &quot;Не удалось загрузить данные свечей&quot;,
+      isLoading: false,
+    }));
+  }
+};
+</code></pre>
+<p><strong>Логика:</strong>
+- Загружает данные свечей через API-запрос.
+- Обновляет <code>candles</code> в <code>PrefetchedData</code>, что делает их доступными для визуализации.
+<img alt="img_6.png" src="img_6.png" /></p></p>
     </article>
 </section>
             <!-- endblock -->
