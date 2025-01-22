@@ -127,23 +127,23 @@ export const AuthProvider = ({ children }) => {
 #### Код настройки интерсепторов
 
 1. **Создание экземпляра Axios:**
-   ```typescript
-   const apiClient = axios.create({
-     baseURL: BASE_URL,
-   });
-   ```
+```typescript
+const apiClient = axios.create({
+ baseURL: BASE_URL,
+});
+```
    Здесь создаётся экземпляр `axios` с базовым URL, указывающим на API сервера. Все запросы будут направляться на этот адрес.
 
 2. **Получение токенов из локального хранилища:**
-   ```typescript
-   function getAccessToken(): string | null {
-     return localStorage.getItem("authToken");
-   }
+```typescript
+function getAccessToken(): string | null {
+ return localStorage.getItem("authToken");
+}
 
-   function getRefreshToken(): string | null {
-     return localStorage.getItem("refreshToken");
-   }
-   ```
+function getRefreshToken(): string | null {
+ return localStorage.getItem("refreshToken");
+}
+```
    Эти функции возвращают токены из `localStorage`, если они существуют, или `null`, если токен отсутствует.
 
 3. **Обновление токенов:**
@@ -173,26 +173,26 @@ const refreshAuthLogic = (failedRequest: AxiosError) =>
    Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает `/auth/refresh` для получения новых токенов.
 
 4. **Интеграция с `axios-auth-refresh`:**
-   ```typescript
-   createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
-     pauseInstanceWhileRefreshing: true,
-   });
-   ```
+```typescript
+createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
+ pauseInstanceWhileRefreshing: true,
+});
+```
    Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из `refreshAuthLogic` для каждого запроса с истёкшим токеном.
 
 5. **Обработка запросов:**
-   ```typescript
-   apiClient.interceptors.request.use(
-     (config) => {
-       const token = getAccessToken();
-       if (token) {
-         config.headers.Authorization = `Bearer ${token}`;
-       }
-       return config;
-     },
-     (error) => Promise.reject(error),
-   );
-   ```
+```typescript
+apiClient.interceptors.request.use(
+ (config) => {
+   const token = getAccessToken();
+   if (token) {
+     config.headers.Authorization = `Bearer ${token}`;
+   }
+   return config;
+ },
+ (error) => Promise.reject(error),
+);
+```
    Этот интерсептор добавляет заголовок `Authorization` ко всем запросам, если токен авторизации доступен.
 
 ### 3. Логика авторизации на главной странице
