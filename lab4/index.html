@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-        <title>Лабораторная часть - My Docs</title>
+        <title>Лабораторная часть (коммерческий проект) - My Docs</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -169,7 +169,7 @@
         <a href="./"
             class=" active 
             drac-anchor d-inline-flex align-items-center border-0 drac-text-purple--hover">
-            Лабораторная часть
+            Лабораторная часть (коммерческий проект)
         </a>
     </li>
                     </ul>
@@ -258,15 +258,8 @@
 <li><code>react-select</code>: Улучшенные выпадающие списки для выбора торговых пар.</li>
 <li><code>react-toastify</code>: Уведомления об ошибках, успехах и других событиях.</li>
 </ul>
-<h3 id="_4">Для бэкенда:</h3>
-<ul>
-<li><code>FastAPI</code>: Обработка серверной логики, включая аутентификацию пользователей и API.</li>
-<li><code>SQLAlchemy</code>: Работа с базой данных.</li>
-<li><code>Web3.py</code>: Взаимодействие с блокчейном, включая вызовы смарт-контрактов.</li>
-<li><code>Pydantic</code>: Определение и валидация входных данных.</li>
-</ul>
-<h2 id="_5">Описание страниц интерфейса</h2>
-<h3 id="_6">Главная страница</h3>
+<h2 id="_4">Описание страниц интерфейса</h2>
+<h3 id="_5">Главная страница</h3>
 <ul>
 <li><strong>Описание</strong>: Начальная страница, приветствующая пользователей и предоставляющая возможность подключения кошелька.</li>
 <li><strong>Основные функции</strong>:</li>
@@ -276,14 +269,14 @@
 <img alt="img_1.png" src="img_1.png" />
 <img alt="img_2.png" src="img_2.png" /></li>
 </ul>
-<h4 id="_7">Логика реализации:</h4>
+<h4 id="_6">Логика реализации:</h4>
 <ul>
 <li><strong>Подключение кошелька</strong>: Используется <code>TonConnectButton</code> для взаимодействия с TonConnect.</li>
 <li><strong>Предзагрузка данных</strong>: При помощи функций <code>getPairs()</code> и <code>fetchTime()</code> данные о парах и текущем времени блока загружаются и сохраняются в контексте через <code>setData</code>.</li>
 <li><strong>Обработка ошибок</strong>: Ошибки подключения и загрузки данных отображаются в пользовательском интерфейсе.</li>
 <li><strong>Переходы</strong>: Кнопки навигации управляют переходом на другие страницы с использованием <code>useNavigate</code>.</li>
 </ul>
-<h3 id="_8">Страница ставок</h3>
+<h3 id="_7">Страница ставок</h3>
 <ul>
 <li><strong>Описание</strong>: Предоставляет интерфейс для выбора торговых пар и размещения ставок. При первом открытии пользователю показываются инструкции.</li>
 <li><strong>Основные функции</strong>:</li>
@@ -293,12 +286,12 @@
 <img alt="img_3.png" src="img_3.png" /></li>
 <li>на изображении: желтая стрелка - агрегированная ставка всех пользователей за прошлый блок, белая стрелка - ставка юзера за прошлый блок, ее же можно двигать, переключая моды осей, чтобы пояставить новую ставку.</li>
 </ul>
-<h4 id="_9">Логика реализации:</h4>
+<h4 id="_8">Логика реализации:</h4>
 <ul>
 <li><strong>Трёхмерный интерфейс ставок</strong>: Пользователи видят трехмерный график, на котором агрегированные ставки всех участников за прошлый блок и своя ставка в виде стрелок на графике.</li>
 <li><strong>Обратная связь</strong>: После отправки пользователь получает уведомление о статусе ставки.</li>
 </ul>
-<h3 id="_10">Страница управления кошельком</h3>
+<h3 id="_9">Страница управления кошельком</h3>
 <ul>
 <li><strong>Описание</strong>: Позволяет пользователю управлять балансом кошелька, включая пополнение и вывод средств.</li>
 <li><strong>Основные функции</strong>:</li>
@@ -308,12 +301,12 @@
 <li>История ставок с отображением их статуса.
 <img alt="img_5.png" src="img_5.png" /></li>
 </ul>
-<h4 id="_11">Логика реализации:</h4>
+<h4 id="_10">Логика реализации:</h4>
 <ul>
 <li><strong>Обработка пополнения</strong>: Запросы на сервер для обработки депозитов и их конвертации в токены платформы.</li>
 <li><strong>Вывод средств</strong>: Инициирование транзакции на указанный адрес (есть возможность сменить адрес).</li>
 </ul>
-<h3 id="_12">Страница балансов юзера</h3>
+<h3 id="_11">Страница балансов юзера</h3>
 <ul>
 <li><strong>Описание</strong>: Позволяет пользователю узнать его оставшийся депозит в игре, а также количество токенов находящихся 'at risk'. </li>
 <li><strong>Основные функции</strong>:</li>
@@ -321,32 +314,32 @@
 <li>Кнопка для отключения кошелька.
 <img alt="img_4.png" src="img_4.png" /></li>
 </ul>
-<h4 id="_13">Логика реализации:</h4>
+<h4 id="_12">Логика реализации:</h4>
 <ul>
 <li><strong>Обработка пополнения</strong>: Запросы на сервер для плучения балансов.</li>
 </ul>
-<h2 id="_14">Реализация авторизации</h2>
-<h4 id="_15">Диаграмма процесса авторизации</h4>
+<h2 id="_13">Реализация авторизации</h2>
+<h4 id="_14">Диаграмма процесса авторизации</h4>
 <p><img alt="img.png" src="img.png" /></p>
-<h3 id="_16">Описание работы</h3>
+<h3 id="_15">Описание работы</h3>
 <p>Авторизация на платформе организована через интеграцию с блокчейном Ton и использованием механизма <code>ton_proof</code>. Весь процесс проходит несколько ключевых этапов:</p>
 <ol>
 <li><strong>Подключение кошелька:</strong></li>
-<li>Пользователь подключает кошелёк через интерфейс TonConnect на клиенте.</li>
+<li>Клиент отправляет запрос на сервер для генерации <code>payload</code>.</li>
 <li>
-<p>Клиент отправляет запрос на сервер для генерации <code>payload</code>.</p>
+<p>Пользователь подключает кошелёк через интерфейс TonConnect на клиенте, отправляя <code>payload</code> контракту кошелька.</p>
 </li>
 <li>
 <p><strong>Подписание proof:</strong></p>
 </li>
 <li>Полученный <code>payload</code> подписывается приватным ключом кошелька пользователя.</li>
 <li>
-<p>Подписанный proof возвращается на фронтенд, а затем отправляется на сервер для проверки.</p>
+<p>Подписанный <code>proof</code> возвращается клиенту, а затем отправляется на сервер для проверки.</p>
 </li>
 <li>
 <p><strong>Проверка proof:</strong></p>
 </li>
-<li>Сервер валидирует подпись, проверяя её с публичным ключом пользователя в блокчейне.</li>
+<li>Сервер валидирует подпись, используя публичный ключ кошелька пользователя пользователя.</li>
 <li>
 <p>Если proof валиден, сервер генерирует пару токенов (access и refresh) и отправляет их клиенту.</p>
 </li>
@@ -356,54 +349,8 @@
 <li>Токены сохраняются в <code>localStorage</code> на клиенте и используются для авторизации запросов к API.</li>
 <li>При истечении срока действия токенов клиент автоматически обновляет их через refresh-токен.</li>
 </ol>
-<h3 id="_17">Основные компоненты</h3>
-<h4 id="1-ton_proof">1. Бэкенд: Генерация и проверка <code>ton_proof</code></h4>
-<p><strong>Генерация payload:</strong></p>
-<pre><code class="language-python">from fastapi import APIRouter
-from dependencies.services.auth import get_tonproof_service
-
-router = APIRouter(prefix='/auth', tags=['Authorization'])
-
-@router.get('/payload')
-async def generate_payload():
-    tonproof_service = get_tonproof_service()
-    payload = await tonproof_service.generate_payload()
-    return {&quot;payload&quot;: payload}
-</code></pre>
-<p><strong>Объяснение:</strong>
-- Сервис <code>get_tonproof_service</code> генерирует временный токен (payload) для пользователя.</p>
-<p><strong>Проверка подписанного proof:</strong></p>
-<pre><code class="language-python">from fastapi import APIRouter, HTTPException
-from domain.dto.auth import Credentials
-from dependencies.services.auth import get_auth_service
-
-router = APIRouter()
-
-@router.post('/verify_payload')
-async def verify_payload(credentials: Credentials):
-    auth_service = get_auth_service()
-    tokens = await auth_service.create_token(credentials)
-    return {
-        &quot;accessToken&quot;: tokens.access_token,
-        &quot;refreshToken&quot;: tokens.refresh_token
-    }
-</code></pre>
-<p><strong>Объяснение:</strong>
-- Принимает подписанный proof и проверяет его с использованием сервиса <code>get_auth_service</code>.
-- Генерирует access и refresh токены.</p>
-<h4 id="2">2. Бэкенд: Обновление токенов</h4>
-<pre><code class="language-python">@router.post('/refresh')
-async def refresh_tokens(refresh_token: str):
-    auth_service = get_auth_service()
-    tokens = await auth_service.refresh_token(refresh_token)
-    return {
-        &quot;accessToken&quot;: tokens.access_token,
-        &quot;refreshToken&quot;: tokens.refresh_token
-    }
-</code></pre>
-<p><strong>Объяснение:</strong>
-- Использует refresh токен для выдачи новых токенов.</p>
-<h4 id="3">3. Фронтенд: Контекст авторизации</h4>
+<h3 id="_16">Основные компоненты</h3>
+<h4 id="1">1. Фронтенд: Контекст авторизации</h4>
 <pre><code class="language-tsx">import React, { createContext, useContext } from &quot;react&quot;;
 import { verifyPayload } from &quot;../services/api&quot;;
 
@@ -422,7 +369,7 @@ export const AuthProvider = ({ children }) =&gt; {
 };
 </code></pre>
 <p><strong>Объяснение:</strong>
-- Функция <code>loginWithProof</code> выполняет запрос на сервер для проверки proof и сохраняет токены в локальное хранилище.</p>
+- Функция <code>loginWithProof</code> выполняет запрос на сервер для проверки <code>proof</code> и сохраняет токены в локальное хранилище.</p>
 <h4 id="4">4. Фронтенд: Интерсепторы для обновления токенов</h4>
 <pre><code class="language-tsx">apiClient.interceptors.response.use(
   (response) =&gt; response,
@@ -442,7 +389,204 @@ export const AuthProvider = ({ children }) =&gt; {
 2. Клиент отправляет запрос на сервер для генерации <code>ton_proof</code>.
 3. Полученный proof подписывается в кошельке и возвращается клиенту.
 4. Клиент отправляет подписанный proof на сервер для проверки.
-5. Сервер выдаёт токены доступа и обновления.</p></p>
+5. Сервер выдаёт токены доступа и обновления.</p>
+<h3 id="4_1">4. Фронтенд: Интерсепторы для обновления токенов</h3>
+<p><strong>Интерсепторы</strong> помогают автоматически обрабатывать запросы и ответы API. Это особенно полезно для управления обновлением токенов, когда срок действия текущего токена истекает.</p>
+<h4 id="_17">Код настройки интерсепторов</h4>
+<ol>
+<li>
+<p><strong>Создание экземпляра Axios:</strong>
+   <code>javascript
+   const apiClient = axios.create({
+     baseURL: BASE_URL,
+   });</code>
+   Здесь создаётся экземпляр <code>axios</code> с базовым URL, указывающим на API сервера. Все запросы будут направляться на этот адрес.</p>
+</li>
+<li>
+<p><strong>Получение токенов из локального хранилища:</strong>
+   ```javascript
+   function getAccessToken(): string | null {
+     return localStorage.getItem("authToken");
+   }</p>
+</li>
+</ol>
+<p>function getRefreshToken(): string | null {
+     return localStorage.getItem("refreshToken");
+   }
+   <code>``
+   Эти функции возвращают токены из</code>localStorage<code>, если они существуют, или</code>null`, если токен отсутствует.</p>
+<ol>
+<li>
+<p><strong>Обновление токенов:</strong>
+   <code>javascript
+   const refreshAuthLogic = (failedRequest: AxiosError) =&gt;
+     apiClient
+       .post&lt;RefreshedTokens&gt;(
+         "/auth/refresh",
+         {},
+         {
+           headers: {
+             "X-Refresh-Token": getRefreshToken(),
+           },
+         }
+       )
+       .then((tokenRefreshResponse) =&gt; {
+         localStorage.setItem("authToken", tokenRefreshResponse.data.accessToken);
+         localStorage.setItem(
+           "refreshToken",
+           tokenRefreshResponse.data.refreshToken,
+         );
+         failedRequest.response!.config.headers["Authorization"] =
+           "Bearer " + tokenRefreshResponse.data.accessToken;
+         return Promise.resolve();
+       });</code>
+   Когда запрос получает ошибку 401 (Unauthorized), интерсептор автоматически вызывает <code>/auth/refresh</code> для получения новых токенов.</p>
+</li>
+<li>
+<p><strong>Интеграция с <code>axios-auth-refresh</code>:</strong>
+   <code>javascript
+   createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
+     pauseInstanceWhileRefreshing: true,
+   });</code>
+   Эта библиотека упрощает процесс обновления токенов, автоматически выполняя логику из <code>refreshAuthLogic</code> для каждого запроса с истёкшим токеном.</p>
+</li>
+<li>
+<p><strong>Обработка запросов:</strong>
+   <code>javascript
+   apiClient.interceptors.request.use(
+     (config) =&gt; {
+       const token = getAccessToken();
+       if (token) {
+         config.headers.Authorization = `Bearer ${token}`;
+       }
+       return config;
+     },
+     (error) =&gt; Promise.reject(error),
+   );</code>
+   Этот интерсептор добавляет заголовок <code>Authorization</code> ко всем запросам, если токен авторизации доступен.</p>
+</li>
+</ol>
+<h3 id="5">5. Логика авторизации на главной странице</h3>
+<h4 id="homepage">Код авторизации на <code>HomePage</code></h4>
+<h3 id="_18">Расширенное описание работы и логики фронтенда</h3>
+<hr />
+<h4 id="tonconnect">Взаимодействия с TonConnect на главной странице</h4>
+<pre><code class="language-tsx">useEffect(() =&gt; {
+    tonConnectUI.setConnectRequestParameters({ state: &quot;loading&quot; });
+    const initTonConnect = async () =&gt; {
+      try {
+        const tonProofPayload = await getPayload();
+
+        if (tonProofPayload) {
+          tonConnectUI.setConnectRequestParameters({
+            state: &quot;ready&quot;,
+            value: { tonProof: tonProofPayload.payload },
+          });
+        } else {
+          tonConnectUI.setConnectRequestParameters(null);
+        }
+      } catch (error) {
+        console.error(&quot;[HomePage]: Error during initialization:&quot;, error);
+        setError(
+          error instanceof Error ? error.message : &quot;Unknown error occurred.&quot;
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    initTonConnect();
+  }, []);
+</code></pre>
+<p><strong>Объяснение логики:</strong>
+1. <strong>Инициализация TonConnect:</strong>
+   - <code>tonConnectUI.setConnectRequestParameters</code> сначала устанавливает состояние как <code>loading</code>, что указывает на начальную загрузку.
+   - Затем происходит асинхронный вызов функции <code>getPayload</code>, которая обращается к серверу для получения уникального <code>tonProofPayload</code>.</p>
+<ol>
+<li><strong>Установка параметров подключения:</strong></li>
+<li>Если <code>tonProofPayload</code> успешно получен, он передается в <code>tonConnectUI</code> для установки параметров подключения.</li>
+<li>
+<p>Если загрузка не удалась, параметры сбрасываются.</p>
+</li>
+<li>
+<p><strong>Обработка ошибок:</strong></p>
+</li>
+<li>
+<p>Ошибки при выполнении асинхронного кода обрабатываются и логируются. В случае ошибки пользователь получает сообщение.</p>
+</li>
+<li>
+<p><strong>Завершение загрузки:</strong></p>
+</li>
+<li>Независимо от результата, состояние загрузки (<code>loading</code>) завершается.</li>
+</ol>
+<hr />
+<h4 id="_19">Запросы к бэкенду</h4>
+<p>Клиентское приложение взаимодействует с сервером через API, используя предварительно настроенный клиент Axios. Вот пример одного из запросов:</p>
+<pre><code class="language-typescript">export async function getUserBets(): Promise&lt;UserBetsResponse&gt; {
+    try {
+        const response = await apiClient.get&lt;UserBetsResponse&gt;(&quot;/user/bets&quot;);
+        return response.data;
+    } catch (error) {
+        console.error(&quot;Error fetching user bets:&quot;, error);
+        throw error;
+    }
+}
+</code></pre>
+<p><strong>Объяснение:</strong>
+1. <strong>Назначение:</strong> 
+   Запрос получает список ставок пользователя, обращаясь к эндпоинту <code>/user/bets</code>.</p>
+<ol>
+<li><strong>Обработка ошибок:</strong></li>
+<li>Любая ошибка при выполнении запроса логируется.</li>
+<li>
+<p>Если сервер недоступен или вернул ошибку, она пробрасывается в вызывающий компонент.</p>
+</li>
+<li>
+<p><strong>Типизация:</strong></p>
+</li>
+<li>Используется строгая типизация ответа с помощью <code>Promise&lt;UserBetsResponse&gt;</code>, что позволяет интегрироваться с остальными компонентами приложения.</li>
+</ol>
+<hr />
+<h3 id="prefetcheddata">Работа <code>PrefetchedData</code> и его контекста</h3>
+<p><strong><code>PrefetchedData</code></strong> предназначен для предварительной загрузки и управления ключевыми данными, такими как торговые пары, свечные графики и текущее время блока.</p>
+<h4 id="_20">Как он работает:</h4>
+<ol>
+<li>
+<p><strong>Создание контекста:</strong>
+   <code>typescript
+   const DataPrefetchContext = createContext&lt;DataPrefetchContextValue | undefined&gt;(undefined);</code></p>
+</li>
+<li>
+<p><strong>Состояние данных:</strong></p>
+</li>
+<li>
+<p>Состояние данных включает:</p>
+<ul>
+<li>Список пар (<code>pairs</code>).</li>
+<li>Данные свечей (<code>candles</code>).</li>
+<li>Выбранную пару (<code>selectedPair</code>).</li>
+<li>Текущее время блока (<code>time</code>).</li>
+</ul>
+</li>
+<li>
+<p><strong>Методы управления:</strong></p>
+</li>
+<li><code>fetchCandlesForPair</code>: Загружает данные свечей для выбранной пары.</li>
+<li>
+<p><code>setSelectedPair</code>: Обновляет текущую выбранную пару и загружает соответствующие свечи.</p>
+</li>
+<li>
+<p><strong>Использование в компонентах:</strong></p>
+</li>
+<li>Компоненты получают доступ к этим данным через <code>useDataPrefetch</code>.</li>
+</ol>
+<h4 id="_21">Пример использования:</h4>
+<ul>
+<li>При выборе пары через <code>react-select</code> метод <code>setSelectedPair</code> обновляет состояние <code>selectedPair</code> и автоматически подгружает свечные данные для выбранной пары.</li>
+</ul>
+<p><strong>Польза:</strong>
+- Уменьшает время загрузки данных в реальном времени.
+- Повышает отзывчивость интерфейса, так как предварительно загруженные данные доступны локально.</p></p>
     </article>
 </section>
             <!-- endblock -->
