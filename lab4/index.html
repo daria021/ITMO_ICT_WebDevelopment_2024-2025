@@ -434,7 +434,7 @@ function getRefreshToken(): string | null {
 <ol>
 <li><strong>Интеграция с <code>axios-auth-refresh</code>:</strong></li>
 </ol>
-<pre><code class="language-typescript">createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
+<pre><code class="language-tsx">createAuthRefreshInterceptor(apiClient, refreshAuthLogic, {
  pauseInstanceWhileRefreshing: true,
 });
 </code></pre>
@@ -442,7 +442,7 @@ function getRefreshToken(): string | null {
 <ol>
 <li><strong>Обработка запросов:</strong></li>
 </ol>
-<pre><code class="language-typescript">apiClient.interceptors.request.use(
+<pre><code class="language-tsx">apiClient.interceptors.request.use(
  (config) =&gt; {
    const token = getAccessToken();
    if (token) {
@@ -612,29 +612,27 @@ function getRefreshToken(): string | null {
 <hr />
 <h4 id="prefetcheddata_1">Связь запросов с <code>PrefetchedData</code></h4>
 <ul>
-<li>
-<p><strong>Инициализация данных:</strong> При загрузке страницы в <code>useEffect</code> происходит вызов двух функций:
-  <code>tsx
-  useEffect(() =&gt; {
-    const fetchData = (): void =&gt; {
-      fetchPairs();
-      fetchTimeData();
-    };
-    fetchData(); // Запускаем первый цикл запросов
-  }, [data.selectedPair]);</code>
-  Эти функции обновляют <code>pairs</code> и <code>time</code> внутри <code>PrefetchedData</code>, что делает их доступными для компонентов.</p>
-</li>
-<li>
-<p><strong>Обновление данных свечей:</strong> Когда пользователь выбирает пару, <code>setSelectedPair</code> автоматически вызывает <code>fetchCandlesForPair</code>, чтобы обновить свечи для выбранной пары:
-  <code>tsx
-  const setSelectedPair = (pair: PairOption | null) =&gt; {
-    setData((prev) =&gt; ({ ...prev, selectedPair: pair }));
-    if (pair?.value) {
-      fetchCandlesForPair(pair.value);
-    }
-  };</code></p>
-</li>
+<li><strong>Инициализация данных:</strong> При загрузке страницы в <code>useEffect</code> происходит вызов двух функций:</li>
 </ul>
+<pre><code class="language-tsx">useEffect(() =&gt; {
+const fetchData = (): void =&gt; {
+  fetchPairs();
+  fetchTimeData();
+};
+fetchData(); // Запускаем первый цикл запросов
+}, [data.selectedPair]);
+</code></pre>
+<p>Эти функции обновляют <code>pairs</code> и <code>time</code> внутри <code>PrefetchedData</code>, что делает их доступными для компонентов.</p>
+<ul>
+<li><strong>Обновление данных свечей:</strong> Когда пользователь выбирает пару, <code>setSelectedPair</code> автоматически вызывает <code>fetchCandlesForPair</code>, чтобы обновить свечи для выбранной пары:</li>
+</ul>
+<pre><code class="language-tsx">const setSelectedPair = (pair: PairOption | null) =&gt; {
+setData((prev) =&gt; ({ ...prev, selectedPair: pair }));
+if (pair?.value) {
+  fetchCandlesForPair(pair.value);
+}
+};
+</code></pre>
 <h5 id="fetchcandlesforpair">Загрузка свечей (<code>fetchCandlesForPair</code>):</h5>
 <pre><code class="language-tsx">const fetchCandlesForPair = async (pairId: string) =&gt; {
   setData((prev) =&gt; ({ ...prev, isLoading: true, error: null }));
